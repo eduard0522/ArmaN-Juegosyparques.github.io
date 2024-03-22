@@ -1,6 +1,4 @@
 const d = document;
-
-
 const $sliderContent = d.querySelectorAll('.slider-e-content');
 
 const $next = d.querySelector('.next');
@@ -14,10 +12,8 @@ setInterval(() => {
  next()
 }, 3000);
 
-
 $next.addEventListener('click' ,(e) => next() )
 $prev.addEventListener('click' , (e) => prev() )
-
 
 function next() {
   unMount()
@@ -29,8 +25,6 @@ function next() {
   mount()
 }
 
-
-
  function prev () {
  unMount()
   if(index <= 0 ){
@@ -40,8 +34,4 @@ function next() {
   }
   mount()
 }
-
-
-
 mount();
-
