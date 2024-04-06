@@ -45,7 +45,8 @@ d.addEventListener('DOMContentLoaded', () => {
     el.addEventListener('click', (e) => {
       console.log($changeDirection)
       $changeDirection.click();
-    })
-  })
-})
+      removeEventListener('DOMContentLoaded');
+    });
+  });
+});
 
