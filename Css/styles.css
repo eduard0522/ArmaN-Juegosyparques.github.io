@@ -34,7 +34,9 @@ body{
 /**************** COLOCA EL UNDERLINE AL HACER EL HOVER ***********************/ 
 .underline:hover{
   text-decoration: underline;
+  transition:  1s all ;
 }
+
 
 /************** HEADER ************************/
 
@@ -126,14 +128,11 @@ nav ul .servicesLi:hover .servicesList{
 nav ul .servicesList{
   visibility: hidden; 
   position: absolute;
-  left:0 ;
+  width: 200px;
+  left:-50% ;
   right: 0;
-  margin-inline: auto;
   flex-direction: column;
   background-color:var(--primary-color);
-  justify-content: center;
-  align-items: center;
-  text-align: center;
   border-bottom-left-radius: .5rem;
   border-bottom-right-radius: .5rem;
   font-weight: 600;
@@ -141,12 +140,13 @@ nav ul .servicesList{
 
 nav .horizontal-list li .servicesList li , nav .horizontal-list li .servicesList li a{
   width: 100%;
-  padding: .5rem;
+  padding: 1rem .5rem;
   color: var(--tr-color);
   cursor: pointer;
   font-weight: 200;
   font-size: 1rem;
   font-family: sans-serif;
+  text-align: left;
 }
 
 /******************** LISTA DESPLEGRABLE DE LOS TIPOS DE PARQUES  ******************/
@@ -199,6 +199,7 @@ nav .horizontal-list li .servicesList li , nav .horizontal-list li .servicesList
   color: var(--tr-color);
   border-radius: .5rem;
   margin-top: 15rem;
+  aspect-ratio: 1434px/769px;
 }
 /********************************** BOTONES DE CONTACTO ****************/
 .btn-contact {
@@ -222,12 +223,16 @@ nav .horizontal-list li .servicesList li , nav .horizontal-list li .servicesList
   content: "";
   position: absolute;
   top: 0;
-  left: -100%;
-  width: 100%;
+  left: 0;
+  width: 0%;
   height: 100%;
   background: linear-gradient(to right,transparent, rgba(255, 255, 255, 0.182));
   animation: buttonFlash 1s  linear infinite;
   border-radius: .5rem;
+}
+.btn-contact:hover{
+  color: #07da07;
+  border-color: #07da07 ;
 }
 /********************************* ANIMACIÓN DE LOS BOTONES DE CONTACTO *******************/
 @keyframes flash{
@@ -243,7 +248,7 @@ nav .horizontal-list li .servicesList li , nav .horizontal-list li .servicesList
 
 @keyframes buttonFlash{
 to{ 
-  left: 100%;
+  width: 100%;
 }
 }
 .hero-image div button i {
@@ -274,6 +279,8 @@ main .aside-icons i{
 /********************************* DESCRIPCIÓN DE LA COMPAÑIA ********************************/
 .company-description{
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .company-description .img-container{
   width: 50%;
@@ -482,6 +489,7 @@ margin-right: 3rem;
 .products .cards .card img{
   width: 100%;
   height: 50%;
+  aspect-ratio: 300px/auto;
 }
 .products .cards .card h3{
   font-size: 1.5rem;
@@ -499,7 +507,7 @@ margin-right: 3rem;
   text-align: left;
   width: 100%;
   height: 75px;
-  background-image: url('../assets/Rectangle33.png');
+  background-image: url('../assets/Rectangle33.webp');
   background-size: cover;
   background-repeat: no-repeat;
   padding: 1rem 0 0 1rem;
@@ -528,13 +536,14 @@ margin-right: 3rem;
   margin-top: 4rem;
 } 
 .container{
-  width: 100%;
+  width: 800px;
   margin-top: 2rem;
+  margin-inline: auto;
   position: relative;
   height: 600px;
 }
 .container .slider-experiences{
-  width: 800px;
+  width: 100%;
   height: 600px;
   box-shadow:0 3px 5px #00000083 ;
   margin-inline:auto ;
@@ -563,30 +572,45 @@ margin-right: 3rem;
   width: 100%;
   border-radius: 1rem;
 }
-.slider-experiences .slider-e-content h3{
-  text-align: center;
+.description-proyect{
   position: absolute;
   font-size: 1.5rem;
   color: var(--tr-color);
   bottom: 0rem;
   left: 0;
   right: 0;
-  margin-inline: auto;
-  width: 50%;
-  background-color: #00000092;
+  width: 100%;
+  background-color: #000000c9;
   padding: 1rem;
-  border-radius: .5rem;
+  text-align: left;
 }
 .container .controls{
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  display: flex;
+  justify-content: space-between;
+}
+.container .controls div{
   display: flex;
   justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  background-color: #000000;
+  border-radius: 50%;
+}
+.container .controls div:hover{
+  background-color: var(--primary-color);
 }
 .container .controls i{
-  color: #000000;
+  color: #ffffff;
+  text-align: center;
   font-size: 2rem;
-  padding: 1rem 1rem;
   cursor: pointer;
-}  
+  padding: 0;
+  margin-top: .15rem;
+} 
 
 .slider-experiences .active{
   display: block;
@@ -685,6 +709,11 @@ footer .footer-dates p , footer .footer-dates h2{
   font-weight: bold;
   padding: 0;
   margin: 0;
+}
+footer .footer-dates div{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 footer .footer-dates  a{
   text-decoration: none;
@@ -999,13 +1028,19 @@ footer .footer-dates i{
     margin:0 ;
   }
   footer .footer-dates{
+   
     height: 15px;
     padding: .5rem .5rem ;
   }
   footer .footer-dates p , footer .footer-dates h2{
     font-size: .5rem;
   }
-  footer .footer-dates i{
+  footer .footer-dates div{
+    align-items: center;
+    justify-content: center;
+  }
+  footer .footer-dates div i{
+    margin-top: .5rem;
     font-size: .8rem;
     margin-right: .2rem;
   }

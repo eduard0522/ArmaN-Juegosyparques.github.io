@@ -1,5 +1,9 @@
 const d = document;
 const $sliderContent = d.querySelectorAll('.slider-e-content');
+const $btnContact = d.querySelectorAll('.btn-contact');
+const $changeDirection = d.querySelector('.redirect');
+
+
 
 const $next = d.querySelector('.next');
 const $prev = d.querySelector('.prev');
@@ -35,3 +39,13 @@ function next() {
   mount()
 }
 mount();
+
+d.addEventListener('DOMContentLoaded', () => {
+  $btnContact.forEach((el) => {
+    el.addEventListener('click', (e) => {
+      console.log($changeDirection)
+      $changeDirection.click();
+    })
+  })
+})
+
